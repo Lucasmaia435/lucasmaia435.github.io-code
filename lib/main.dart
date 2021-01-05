@@ -42,8 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (windowWidth < 650 && windowWidth >= 550) {
       childAspectRatio = 3.5;
-    } else if (windowWidth < 550) {
+    } else if (windowWidth < 550 && windowWidth >= 450) {
       childAspectRatio = 3.5;
+    } else if (windowWidth < 450) {
+      childAspectRatio = 2;
     }
     return Scaffold(
       body: SingleChildScrollView(

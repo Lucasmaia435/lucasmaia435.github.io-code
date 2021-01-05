@@ -43,9 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
     if (windowWidth < 650 && windowWidth >= 550) {
       childAspectRatio = 3.5;
     } else if (windowWidth < 550 && windowWidth >= 450) {
-      childAspectRatio = 3.5;
-    } else if (windowWidth < 450) {
+      childAspectRatio = 3;
+    } else if (windowWidth < 450 && windowWidth >= 380) {
       childAspectRatio = 2;
+    } else if (windowWidth < 450) {
+      childAspectRatio = 1;
     }
     return Scaffold(
       body: SingleChildScrollView(
@@ -101,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     crossAxisCount: windowWidth < 650 ? 1 : 2,
                     children: projetos
                         .map(
-                          (e) => projectCard(
+                          (e) => ProjectCard(
                               title: e.title,
                               description: e.description,
                               language: e.language,
